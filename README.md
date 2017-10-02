@@ -175,7 +175,6 @@ level so your integration handles retries gracefully and automatically.
 - [Attempts](sections/attempts.md#attempts)
 - [Bundles](sections/bundles.md#bundles)
 - [BundleAssessments](sections/bundle_assessments.md#bundle_assessments)
-- [Events](sections/events.md#events)
 
 
 ## Conduct
