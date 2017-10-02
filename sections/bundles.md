@@ -5,6 +5,8 @@ Endpoints:
 - [Get all bundles](#get-all-bundles)
 - [Get a bundle](#get-a-bundle)
 - [Create a bundle](#create-a-bundle)
+- [Add an assessment to a bundle](#add-an-assessment-to-a-bundle)
+- [Remove an assessment from a bundle](#remove-an-assessment-from-a-bundle)
 - [Update a bundle](#update-a-bundle)
 - [Destroy a bundle](#destroy-a-bundle)
 
@@ -169,6 +171,62 @@ curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
 ```
 
 
+## Add an Assessment to a Bundle
+
+* `POST /bundles/pgrnovpmee0qkljd/assessments.json` adds one or more assessments to a given bundle in your organization.
+
+**Parameters**:
+
+- `assessment_ids` _(mandatory)_ - An array with the ids of the assessments
+  that you want to add to the bundle.
+
+This endpoint will return `201 Created` with the JSON representation of the
+bundle if the creation was a success. See the [Get a bundle](#get-a-bundle)
+endpoint for more info on the payload.
+
+**Please note that you can add assessments to a bundle, only if the bundle status
+is `unpublished_and_unlocked` and the assessment status is
+`published_and_locked`**
+
+
+###### Example JSON Request
+
+``` json
+{
+  "assessment_ids": ["are-you-a-human", "do-you-math"],
+}
+```
+
+###### Copy as cURL
+
+```bash
+curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"assessment_ids": ["are-you-a-human", "do-you-math"]}' \
+  https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd/assessments.json
+```
+
+
+## Remove an Assessment from a Bundle
+
+* `DELETE /bundles/pgrnovpmee0qkljd/assessments/are-you-human.json` removes the `are-you-human` assessment from the `pgrnovpmee0qkljd` bundle.
+
+This endpoint will return `204 No Content` if successful.
+
+**Please note that you can remove assessments from a bundle, only if the bundle status
+is `unpublished_and_unlocked`**
+
+
+###### Copy as cURL
+
+```bash
+curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+  -H "Content-Type: application/json" \
+  -X DELETE \
+  https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd/assessments/are-you-human.json
+```
+
+
 ## Update a bundle
 
 * `PUT /bundles/pgrnovpmee0qkljd.json` allows changing attributes of a bundle
@@ -203,7 +261,7 @@ curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
 * `DELETE /bundles/pgrnovpmee0qkljd.json` will delete the given bundle if the
   bundle wasn't previously published.
 
-No params required. This endpoint will return `204 No Content` if successful.
+This endpoint will return `204 No Content` if successful.
 
 You can only delete bundles if they are in the `unpublished_and_unlocked`
 status, otherwise, the deletion is not permitted.
