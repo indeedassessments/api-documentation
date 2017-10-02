@@ -1,5 +1,7 @@
 # Indeed Assessments API
 
+**WARNING: THE CURRENT API IS STILL UNDER CONSTRUCTION AND SOME RESPONSES AND RESOURCE URLS MIGHT CHANGE IN THE NEAR FUTURE.**
+
 Welcome to the Indeed Assessments API. If you're looking to integrate your application with Indeed Assessments or create your own application in concert with data inside of Indeed Assessments, you're in the right place. We're happy to have you!
 
 
@@ -13,14 +15,11 @@ API](https://github.com/prehire/interviewed-api). All integrations will start fr
 
 All URLs start with **`https://api.indeed-assessments.com/v1/`**. URLs are HTTPS only. The latest version of the API is `v1`.
 
-To make a request for all the projects on your account, append the `projects`
-index path to the base URL to form something like
-`https://3.basecampapi.com/999999999/projects.json`. In cURL, it looks like
-this:
+To make a request for all the bundles in your account, append the `bundles` index path to the base URL to form something like `https://api.indeed-assessments.com/v1/bundles.json`. In cURL, it looks like this:
 
 ``` shell
 curl -H "X-IndeedAssessmentsToken: $API_KEY" \
-  https://3.basecampapi.com/999999999/projects.json
+  https://api.indeed-assessments.com/v1/bundles.json
 ```
 
 To create something, you also have to include the `Content-Type` header and the JSON data:
@@ -28,8 +27,8 @@ To create something, you also have to include the `Content-Type` header and the 
 ``` shell
 curl -H "X-IndeedAssessmentsToken: $API_KEY" \
   -H 'Content-Type: application/json' \
-  -d '{ "name": "My new project!" }' \
-  https://3.basecampapi.com/999999999/projects.json
+  -d '{ "name": "My new bundle!" }' \
+  https://api.indeed-assessments.com/v1/bundles.json
 ```
 
 Throughout the Indeed Assessments API docs, we include "Copy as cURL" examples. To try the examples in your shell, copy your API key into your clipboard and run:
@@ -43,7 +42,7 @@ readable. Try [jsonpp](https://jmhodges.github.io/jsonpp/) or `json_pp` on OSX:
 
 ``` shell
 curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
-  https://3.basecampapi.com/999999999/projects.json | json_pp
+  https://api.indeed-assessments.com/v1/bundles.json | json_pp
 ```
 
 
@@ -55,30 +54,81 @@ We use JSON for all API data. The style is no root element and snake\_case for o
 
 ## Pagination
 
-Most collection APIs paginate their results. The number of requests that'll
-appear on each page is variable. In most cases, we use a [geared pagination
-ratio](https://github.com/basecamp/geared_pagination) with 15 results on page
-1, 30 on page 2, 50 on 3, and then 100 on 4 and above. The Indeed Assessments
-API follows the [RFC5988 convention](https://tools.ietf.org/html/rfc5988) of
-using the `Link` header to provide URLs for the `next` page. Follow this
-convention to retrieve the next page of data—please don't build the pagination
-URLs yourself!
+Most collection APIs paginate their results in order to keep response times fast. If the request result is paginated, it will include a `meta` section with the following information:
 
-Here's an example response header from requesting the third page of
-[messages](sections/messages.md#messages):
+- **total_count**: The total elements in the collection.
+- **count**: The total elements returned in the current request.
+- **pages**: The number of pages for the result.
 
+You can paginate the results by sending the following parameters in as part of the query string of the request:
+
+- **page**: The page that you want to retrieve.
+- **per**: Total elements that you want per page.
+
+For example, if you want the first page of bundles, with one element per page, you'd do:
+
+``` shell
+curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+  https://api.indeed-assessments.com/v1/bundles.json?page=1&per=1 | json_pp
 ```
-Link: <https://3.basecampapi.com/999999999/buckets/2085958496/messages.json?page=4>; rel="next"
-```
 
-If the `Link` header is blank, that's the last page. The Indeed Assessments API
-also provides the `X-Total-Count` header, which displays the total number of resources in the collection you are fetching.
+And you would get:
+
+```json
+{
+  "meta": {
+    "total_count": 1,
+    "count": 1,
+    "pages": 1
+  },
+  "results": [
+    {
+      "bundle": {
+        "id": "pgrnovpmee0qkljd",
+        "name": "Frontend Engineer (JS Experience)",
+        "description": "Lorem ipsum dolor sit amet",
+        "completion_redirect_url": null,
+        "status": "published_and_locked",
+        "created_at": "2017-09-29T21:07:36.407Z",
+        "updated_at": "2017-09-29T21:07:36.502Z",
+        "url": "https://my-account.indeed-assessments.com/bundles/pgrnovpmee0qkljd",
+        "assessments": [
+          {
+            "assessment": {
+              "id": "are-you-a-human",
+              "name": "Are You a Human",
+              "description": "Basic test to ensure candidate is a human and not a robot or dog.",
+              "automatically_scored": true,
+              "estimated_duration": "0-15 minutes",
+              "language": "English",
+              "subject_category": "Aptitude \u0026 Psychometric",
+              "preview_token": "X_FR3iXMbm8",
+              "status": "published_and_locked",
+              "created_at": "2017-09-29T21:07:35.390Z",
+              "updated_at": "2017-09-29T21:07:35.856Z"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
 
 
 ## Handling errors
 
 If we're having trouble, you might get a 5xx error. `500` means that the application can't process the request for some reason, but `502 Bad Gateway`, `503 Service Unavailable`, or `504 Gateway Timeout` errors are also possible. In all of these cases, it's your responsibility to retry your request later.
 
+You can also get error responses when creating resources via the API. In this case, we'll try to show you a meaningful error. For example, if you try to create a bundle without a `name`, you'll get a similar response to:
+
+```json
+{
+  "error": "Validation failed: Name can't be blank"
+}
+```
+
+In general, you should consider any non-200 HTTP response code an error.
 
 ## Rate limiting
 
@@ -89,35 +139,12 @@ We recommend baking 429 response-handling in to your HTTP handling at a low leve
 
 ## API endpoints
 
-- [Attachments](https://github.com/basecamp/bc3-api/blob/master/sections/attachments.md#attachments)
-- [Campfires](https://github.com/basecamp/bc3-api/blob/master/sections/campfires.md#campfires)
-- [Chatbots](https://github.com/basecamp/bc3-api/blob/master/sections/chatbots.md#chatbots)
-- [Client approvals](https://github.com/basecamp/bc3-api/blob/master/sections/client_approvals.md#client-approvals)
-- [Client correspondences](https://github.com/basecamp/bc3-api/blob/master/sections/client_correspondences.md#client-correspondences)
-- [Client replies](https://github.com/basecamp/bc3-api/blob/master/sections/client_replies.md#client-replies)
-- [Comments](https://github.com/basecamp/bc3-api/blob/master/sections/comments.md#comments)
-- [Documents](https://github.com/basecamp/bc3-api/blob/master/sections/documents.md#documents)
-- [Events](https://github.com/basecamp/bc3-api/blob/master/sections/events.md#events)
-- [Forwards](https://github.com/basecamp/bc3-api/blob/master/sections/forwards.md#forwards)
-- [Inboxes](https://github.com/basecamp/bc3-api/blob/master/sections/inboxes.md#inboxes)
-- [Message Boards](https://github.com/basecamp/bc3-api/blob/master/sections/message_boards.md#message-boards)
-- [Messages](https://github.com/basecamp/bc3-api/blob/master/sections/messages.md#messages)
-- [Message Types](https://github.com/basecamp/bc3-api/blob/master/sections/message_types.md#get-message-types)
-- [People](https://github.com/basecamp/bc3-api/blob/master/sections/people.md#people)
-- [Projects](https://github.com/basecamp/bc3-api/blob/master/sections/projects.md#projects)
-- [Question answers](https://github.com/basecamp/bc3-api/blob/master/sections/question_answers.md#question-answers)
-- [Questionnaires](https://github.com/basecamp/bc3-api/blob/master/sections/questionnaires.md#questionnaires)
-- [Questions](https://github.com/basecamp/bc3-api/blob/master/sections/questions.md#questions)
-- [Recordings](https://github.com/basecamp/bc3-api/blob/master/sections/recordings.md#recordings)
-- [Schedule entries](https://github.com/basecamp/bc3-api/blob/master/sections/schedule_entries.md#schedule-entries)
-- [Schedules](https://github.com/basecamp/bc3-api/blob/master/sections/schedules.md#schedules)
-- [Templates](https://github.com/basecamp/bc3-api/blob/master/sections/templates.md#templates)
-- [To-do lists](https://github.com/basecamp/bc3-api/blob/master/sections/todolists.md#to-do-lists)
-- [To-dos](https://github.com/basecamp/bc3-api/blob/master/sections/todos.md#to-dos)
-- [To-do sets](https://github.com/basecamp/bc3-api/blob/master/sections/todosets.md#to-do-sets)
-- [Uploads](https://github.com/basecamp/bc3-api/blob/master/sections/uploads.md#uploads)
-- [Vaults](https://github.com/basecamp/bc3-api/blob/master/sections/vaults.md#vaults)
-- [Webhooks](https://github.com/basecamp/bc3-api/blob/master/sections/webhooks.md#webhooks)
+- [Assessments](sections/assessments.md#assessments)
+- [Assignments](sections/assignments.md#assignments)
+- [Attempts](sections/attempts.md#attempts)
+- [Bundles](sections/bundles.md#bundles)
+- [BundleAssessments](sections/bundle_assessments.md#bundle_assessments)
+- [Events](sections/events.md#events)
 
 
 ## Conduct
