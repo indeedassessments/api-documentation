@@ -1,46 +1,60 @@
 # Indeed Assessments API
 
-**WARNING: THE CURRENT API IS STILL UNDER CONSTRUCTION AND SOME RESPONSES AND RESOURCE URLS MIGHT CHANGE IN THE NEAR FUTURE.**
+**WARNING: THE API IS STILL UNDER CONSTRUCTION AND SOME RESPONSES AND
+RESOURCE URLS MIGHT CHANGE IN THE NEAR FUTURE.**
 
-Welcome to the Indeed Assessments API. If you're looking to integrate your application with Indeed Assessments or create your own application in concert with data inside of Indeed Assessments, you're in the right place. We're happy to have you!
+Welcome to the Indeed Assessments API. If you're looking to integrate your
+application with Indeed Assessments or create your own application in concert
+with data inside of Indeed Assessments, you're in the right place. We're happy
+to have you!
 
 
 ## Compatibility with previous APIs
 
 The Indeed Assessments API is not compatible with the [Interviewed
-API](https://github.com/prehire/interviewed-api). All integrations will start fresh with the new API. The core ingredients are the same, though: Indeed Assessments is a REST-style API that uses JSON for serialization.
+API](https://github.com/prehire/interviewed-api). All integrations will start 
+fresh with the new API. The core ingredients are the same, though: Indeed
+Assessments is a REST-style API that uses JSON for serialization.
 
 
 ## Making a request
 
-All URLs start with **`https://api.indeed-assessments.com/v1/`**. URLs are HTTPS only. The latest version of the API is `v1`.
+All URLs start with **`https://api.indeed-assessments.com/v1/`**. URLs are
+HTTPS only. The latest version of the API is `v1`.
 
-To make a request for all the bundles in your account, append the `bundles` index path to the base URL to form something like `https://api.indeed-assessments.com/v1/bundles.json`. In cURL, it looks like this:
+To make a request for all the bundles in your account, append the `bundles`
+index path to the base URL to form something like
+`https://api.indeed-assessments.com/v1/bundles.json`. In cURL, it looks like
+this:
 
-``` shell
+```bash
 curl -H "X-IndeedAssessmentsToken: $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles.json
 ```
 
-To create something, you also have to include the `Content-Type` header and the JSON data:
+To create something, you also have to include the `Content-Type` header and the
+JSON data:
 
-``` shell
+```bash
 curl -H "X-IndeedAssessmentsToken: $API_KEY" \
   -H 'Content-Type: application/json' \
   -d '{ "name": "My new bundle!" }' \
   https://api.indeed-assessments.com/v1/bundles.json
 ```
 
-Throughout the Indeed Assessments API docs, we include "Copy as cURL" examples. To try the examples in your shell, copy your API key into your clipboard and run:
+Throughout the Indeed Assessments API docs, we include "Copy as cURL" examples.
+To try the examples in your shell, copy your API key into your clipboard and
+run:
 
-``` shell
+```bash
 export API_KEY=PASTE_API_KEY_HERE
 ```
 
-Then you should be able to copy/paste any example from the docs. After pasting a cURL example, you can pipe it to a JSON pretty printer to make it more
+Then you should be able to copy/paste any example from the docs. After pasting
+a cURL example, you can pipe it to a JSON pretty printer to make it more
 readable. Try [jsonpp](https://jmhodges.github.io/jsonpp/) or `json_pp` on OSX:
 
-``` shell
+```bash
 curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles.json | json_pp
 ```
@@ -48,26 +62,33 @@ curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
 
 ## JSON only
 
-We use JSON for all API data. The style is no root element and snake\_case for object keys. This means that you have to send the `Content-Type` header
-`Content-Type: application/json; charset=utf-8` when you're **POSTing** or **PUTing** data into Indeed Assessments. Appending `.json` to an endpoint path is optional.
+We use JSON for all API data. The style is no root element and snake\_case for
+object keys. This means that you have to send the `Content-Type` header
+`Content-Type: application/json; charset=utf-8` when you're **POSTing** or
+**PUTing** data into Indeed Assessments. Appending `.json` to an endpoint path
+is optional.
 
 
 ## Pagination
 
-Most collection APIs paginate their results in order to keep response times fast. If the request result is paginated, it will include a `meta` section with the following information:
+Most collection APIs paginate their results in order to keep response times
+fast. If the request result is paginated, it will include a `meta` section with
+the following information:
 
 - **total_count**: The total elements in the collection.
 - **count**: The total elements returned in the current request.
 - **pages**: The number of pages for the result.
 
-You can paginate the results by sending the following parameters in as part of the query string of the request:
+You can paginate the results by sending the following parameters in as part of
+the query string of the request:
 
 - **page**: The page that you want to retrieve.
 - **per**: Total elements that you want per page.
 
-For example, if you want the first page of bundles, with one element per page, you'd do:
+For example, if you want the first page of bundles, with one element per page,
+you'd do:
 
-``` shell
+```bash
 curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles.json?page=1&per=1 | json_pp
 ```
@@ -118,9 +139,14 @@ And you would get:
 
 ## Handling errors
 
-If we're having trouble, you might get a 5xx error. `500` means that the application can't process the request for some reason, but `502 Bad Gateway`, `503 Service Unavailable`, or `504 Gateway Timeout` errors are also possible. In all of these cases, it's your responsibility to retry your request later.
+If we're having trouble, you might get a 5xx error. `500` means that the
+application can't process the request for some reason, but `502 Bad Gateway`,
+`503 Service Unavailable`, or `504 Gateway Timeout` errors are also possible.
+In all of these cases, it's your responsibility to retry your request later.
 
-You can also get error responses when creating resources via the API. In this case, we'll try to show you a meaningful error. For example, if you try to create a bundle without a `name`, you'll get a similar response to:
+You can also get error responses when creating resources via the API. In this
+case, we'll try to show you a meaningful error. For example, if you try to
+create a bundle without a `name`, you'll get a similar response to:
 
 ```json
 {
@@ -132,9 +158,14 @@ In general, you should consider any non-200 HTTP response code an error.
 
 ## Rate limiting
 
-You can perform up to 1 request per second from the same IP address for the same account. If you exceed this limit, you'll get a [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4) response for subsequent requests. Check the `Retry-After` header to learn how many seconds to wait before retrying the request.
+You can perform up to 1 request per second per api key. If you exceed this
+limit, you'll get a [429 Too Many
+Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4)
+response for subsequent requests. Check the `Retry-After` header to learn how
+many seconds to wait before retrying the request.
 
-We recommend baking 429 response-handling in to your HTTP handling at a low level so your integration handles retries gracefully and automatically.
+We recommend baking 429 response-handling in to your HTTP handling at a low
+level so your integration handles retries gracefully and automatically.
 
 
 ## API endpoints
@@ -150,13 +181,18 @@ We recommend baking 429 response-handling in to your HTTP handling at a low leve
 ## Conduct
 
 Please note that this project is released with a [Contributor Code of
-Conduct](CONDUCT.md). By participating in discussions about the Indeed Assessments API, you agree to abide by these terms.
+Conduct](CONDUCT.md). By participating in discussions about the Indeed
+Assessments API, you agree to abide by these terms.
 
 
 ---
 
-If you have a specific feature request or find a bug, [please open a GitHub issue](https://github.com/juandazapata/ia-api-docs/issues/new). We encourage you to fork these docs for local reference and happily accept pull requests with
-improvements.
+If you have a specific feature request or find a bug, [please open a GitHub
+issue](https://github.com/juandazapata/ia-api-docs/issues/new). We encourage
+you to fork these docs for local reference and happily accept pull requests
+with improvements.
 
-To talk with us and other developers about the API, [post a question on StackOverflow](http://stackoverflow.com/questions/ask) tagged `indeed-assessments`. If you need help from us directly, please [open a support
+To talk with us and other developers about the API, [post a question on
+StackOverflow](http://stackoverflow.com/questions/ask) tagged
+`indeed-assessments`. If you need help from us directly, please [open a support
 ticket](https://indeed-assessments.com/support).
