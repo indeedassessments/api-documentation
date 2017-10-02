@@ -137,6 +137,18 @@ And you would get:
 ```
 
 
+## Using HTTP caching
+
+You must use HTTP freshness headers to speed up your application and lighten
+the load on our servers. Most API responses will include an `ETag` or
+`Last-Modified` header. When you first request a resource, store these values.
+On subsequent requests, submit them back to us as `If-None-Match` and
+`If-Modified-Since`, respectively. If the resource hasn't changed since your
+last request, you'll get a 304 Not Modified response with no body, saving you
+the time and bandwidth of sending something you already have.
+
+
+
 ## Handling errors
 
 If we're having trouble, you might get a 5xx error. `500` means that the
