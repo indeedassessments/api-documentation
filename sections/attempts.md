@@ -47,7 +47,7 @@ Endpoints:
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/attempts/123.json
 ```
 

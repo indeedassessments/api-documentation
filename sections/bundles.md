@@ -82,7 +82,7 @@ bundle.
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles.json
 ```
 
@@ -129,7 +129,7 @@ curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd.json
 ```
 
@@ -164,7 +164,7 @@ endpoint for more info on the payload.
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name":"My new bundle"}' \
   https://api.indeed-assessments.com/v1/bundles.json
@@ -200,7 +200,7 @@ is `unpublished_and_unlocked` and the assessment status is
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"assessment_ids": ["are-you-a-human", "do-you-math"]}' \
   https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd/assessments.json
@@ -220,7 +220,7 @@ is `unpublished_and_unlocked`**
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -X DELETE \
   https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd/assessments/are-you-human.json
@@ -248,7 +248,7 @@ endpoint for more info on the payload.
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name":"My new name for the bundle bundle"}' \
   -X PUT \
@@ -273,7 +273,7 @@ bundle](#update-a-bundle) and pass the new `status` with a value of
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -X DELETE \
   https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd.json

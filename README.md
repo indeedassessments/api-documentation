@@ -28,7 +28,7 @@ index path to the base URL to form something like
 this:
 
 ```bash
-curl -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles.json
 ```
 
@@ -36,7 +36,7 @@ To create something, you also have to include the `Content-Type` header and the
 JSON data:
 
 ```bash
-curl -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -H "Authorization: token $API_KEY" \
   -H 'Content-Type: application/json' \
   -d '{ "name": "My new bundle!" }' \
   https://api.indeed-assessments.com/v1/bundles.json
@@ -55,7 +55,7 @@ a cURL example, you can pipe it to a JSON pretty printer to make it more
 readable. Try [jsonpp](https://jmhodges.github.io/jsonpp/) or `json_pp` on OSX:
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles.json | json_pp
 ```
 
@@ -89,7 +89,7 @@ For example, if you want the first page of bundles, with one element per page,
 you'd do:
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/bundles.json?page=1&per=1 | json_pp
 ```
 

@@ -55,7 +55,7 @@ are displayed first).
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/assignments.json
 ```
 
@@ -97,7 +97,7 @@ curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/assignments/832uwyzirea9ftehxuwya38.json
 ```
 
@@ -139,7 +139,7 @@ user, with an invitation to take the assessments.
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"bundle_id":"pgrnovpmee0qkljd", "email":"john.doe@example.com"}' \
   https://api.indeed-assessments.com/v1/assignments.json

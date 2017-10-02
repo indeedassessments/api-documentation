@@ -62,7 +62,7 @@ part of the public library (assessments created by our team).
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/assessments.json
 ```
 
@@ -94,7 +94,7 @@ curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
 ###### Copy as cURL
 
 ```bash
-curl -s -H "X-IndeedAssessmentsToken: $API_KEY" \
+curl -s -H "Authorization: token $API_KEY" \
   https://api.indeed-assessments.com/v1/assessments/are-you-a-human.json
 ```
 
