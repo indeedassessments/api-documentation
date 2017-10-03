@@ -36,7 +36,7 @@ are displayed first).
         "created_at": "2017-09-29T21:07:36.407Z",
         "updated_at": "2017-09-29T21:07:36.502Z",
         "url": "https://yourcompany.indeed-assessments.com/assignments/832uwyzirea9ftehxuwya38",
-        "bundle": {
+        "role": {
           "id": "pgrnovpmee0qkljd",
           "name": "Frontend Engineer (JS Experience)",
           "attempt_ids": [133, 182, 293]
@@ -81,7 +81,7 @@ curl -s -H "Authorization: token $API_KEY" \
     "created_at": "2017-09-29T21:07:36.407Z",
     "updated_at": "2017-09-29T21:07:36.502Z",
     "url": "https://yourcompany.indeed-assessments.com/assignments/832uwyzirea9ftehxuwya38",
-    "bundle": {
+    "role": {
       "id": "pgrnovpmee0qkljd",
       "name": "Frontend Engineer (JS Experience)",
       "attempt_ids": [133, 182, 293]
@@ -109,14 +109,14 @@ curl -s -H "Authorization: token $API_KEY" \
 **Parameters**:
 
 - `email` _(mandatory)_ - The email of the user that you want to take the
-  assessments in the bundle.
-- `bundle_id` _(mandatory if `assessment_ids` is not present)_ - The bundle
+  assessments in the role.
+- `role_id` _(mandatory if `assessment_ids` is not present)_ - The role
   that you want the user to take
-- `assessments_id` _(mandatory if `bundle_id` is not present)_ - An array of
+- `assessments_id` _(mandatory if `role_id` is not present)_ - An array of
   assessment ids that you want the user to take additionally to the assessments
-  that are in the bundle.
+  that are in the role.
 
-You must provide either `bundle_id` or `assessments_id` in your request.
+You must provide either `role_id` or `assessments_id` in your request.
 
 This endpoint will return `201 Created` with the JSON representation of the
 assignment if the creation was a success. See the [Get an
@@ -131,7 +131,7 @@ user, with an invitation to take the assessments.
 
 ``` json
 {
-  "bundle_id": "pgrnovpmee0qkljd",
+  "role_id": "pgrnovpmee0qkljd",
   "email": "john.doe@example.com"
 }
 ```
@@ -141,7 +141,7 @@ user, with an invitation to take the assessments.
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"bundle_id":"pgrnovpmee0qkljd", "email":"john.doe@example.com"}' \
+  -d '{"role_id":"pgrnovpmee0qkljd", "email":"john.doe@example.com"}' \
   https://api.indeed-assessments.com/v1/assignments.json
 ```
 

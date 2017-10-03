@@ -22,14 +22,14 @@ Assessments is a REST-style API that uses JSON for serialization.
 All URLs start with **`https://api.indeed-assessments.com/v1/`**. URLs are
 HTTPS only. The latest version of the API is `v1`.
 
-To make a request for all the bundles in your account, append the `bundles`
+To make a request for all the roles in your account, append the `roles`
 index path to the base URL to form something like
-`https://api.indeed-assessments.com/v1/bundles.json`. In cURL, it looks like
+`https://api.indeed-assessments.com/v1/roles.json`. In cURL, it looks like
 this:
 
 ```bash
 curl -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/bundles.json
+  https://api.indeed-assessments.com/v1/roles.json
 ```
 
 To create something, you also have to include the `Content-Type` header and the
@@ -38,8 +38,8 @@ JSON data:
 ```bash
 curl -H "Authorization: token $API_KEY" \
   -H 'Content-Type: application/json' \
-  -d '{ "name": "My new bundle!" }' \
-  https://api.indeed-assessments.com/v1/bundles.json
+  -d '{ "name": "My new role!" }' \
+  https://api.indeed-assessments.com/v1/roles.json
 ```
 
 Throughout the Indeed Assessments API docs, we include "Copy as cURL" examples.
@@ -56,7 +56,7 @@ readable. Try [jsonpp](https://jmhodges.github.io/jsonpp/) or `json_pp` on OSX:
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/bundles.json | json_pp
+  https://api.indeed-assessments.com/v1/roles.json | json_pp
 ```
 
 
@@ -85,12 +85,12 @@ the query string of the request:
 - **page**: The page that you want to retrieve.
 - **per**: Total elements that you want per page.
 
-For example, if you want the first page of bundles, with one element per page,
+For example, if you want the first page of roles, with one element per page,
 you'd do:
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/bundles.json?page=1&per=1 | json_pp
+  https://api.indeed-assessments.com/v1/roles.json?page=1&per=1 | json_pp
 ```
 
 And you would get:
@@ -104,7 +104,7 @@ And you would get:
   },
   "results": [
     {
-      "bundle": {
+      "role": {
         "id": "pgrnovpmee0qkljd",
         "name": "Frontend Engineer (JS Experience)",
         "description": "Lorem ipsum dolor sit amet",
@@ -112,7 +112,7 @@ And you would get:
         "status": "published_and_locked",
         "created_at": "2017-09-29T21:07:36.407Z",
         "updated_at": "2017-09-29T21:07:36.502Z",
-        "url": "https://my-account.indeed-assessments.com/bundles/pgrnovpmee0qkljd",
+        "url": "https://my-account.indeed-assessments.com/roles/pgrnovpmee0qkljd",
         "assessments": [
           {
             "assessment": {
@@ -158,7 +158,7 @@ In all of these cases, it's your responsibility to retry your request later.
 
 You can also get error responses when creating resources via the API. In this
 case, we'll try to show you a meaningful error. For example, if you try to
-create a bundle without a `name`, you'll get a similar response to:
+create a role without a `name`, you'll get a similar response to:
 
 ```json
 {
@@ -185,7 +185,7 @@ level so your integration handles retries gracefully and automatically.
 - [Assessments](sections/assessments.md#assessments)
 - [Assignments](sections/assignments.md#assignments)
 - [Attempts](sections/attempts.md#attempts)
-- [Bundles](sections/bundles.md#bundles)
+- [Roles](sections/roles.md#roles)
 
 
 ## Conduct

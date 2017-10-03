@@ -1,25 +1,25 @@
-# Bundles
+# Roles
 
 Endpoints:
 
-- [Get all bundles](#get-all-bundles)
-- [Get a bundle](#get-a-bundle)
-- [Create a bundle](#create-a-bundle)
-- [Add an assessment to a bundle](#add-an-assessment-to-a-bundle)
-- [Remove an assessment from a bundle](#remove-an-assessment-from-a-bundle)
-- [Update a bundle](#update-a-bundle)
-- [Destroy a bundle](#destroy-a-bundle)
+- [Get all roles](#get-all-roles)
+- [Get a role](#get-a-role)
+- [Create a role](#create-a-role)
+- [Add an assessment to a role](#add-an-assessment-to-a-role)
+- [Remove an assessment from a role](#remove-an-assessment-from-a-role)
+- [Update a role](#update-a-role)
+- [Destroy a role](#destroy-a-role)
 
 
-## Get all bundles
+## Get all roles
 
-`GET /bundles.json` will return a [paginated list][pagination] of active
-bundles, sorted by bundle name in alphabetical order. The results
-include bundles that were created by your organization and those that are
-part of the public library (bundles created by our team).
+`GET /roles.json` will return a [paginated list][pagination] of active
+roles, sorted by role name in alphabetical order. The results
+include roles that were created by your organization and those that are
+part of the public library (roles created by our team).
 
-Each bundle includes the details for the assessments that are part of that
-bundle.
+Each role includes the details for the assessments that are part of that
+role.
 
 ###### Example JSON Response
 
@@ -32,7 +32,7 @@ bundle.
   },
   "results": [
     {
-      "bundle": {
+      "role": {
         "id": "pgrnovpmee0qkljd",
         "name": "Frontend Engineer (JS Experience)",
         "description": "Test for assessing JS skills",
@@ -40,7 +40,7 @@ bundle.
         "status": "published_and_locked",
         "created_at": "2017-09-29T21:07:36.407Z",
         "updated_at": "2017-09-29T21:07:36.502Z",
-        "url": "https://yourcompany.indeed-assessments.com/bundles/pgrnovpmee0qkljd",
+        "url": "https://yourcompany.indeed-assessments.com/roles/pgrnovpmee0qkljd",
         "assessments": [
           {
             "assessment": {
@@ -62,15 +62,15 @@ bundle.
       }
     },
     {
-      "bundle": {
+      "role": {
         "id": "4qaqmgyz6_bxf-cl",
-        "name": "Poop bundle",
+        "name": "Poop role",
         "description": null,
         "completion_redirect_url": null,
         "status": "published_and_locked",
         "created_at": "2017-10-02T14:09:01.401Z",
         "updated_at": "2017-10-02T14:09:01.401Z",
-        "url": "https://yourcompany.indeed-assessments.com/bundles/4qaqmgyz6_bxf-cl",
+        "url": "https://yourcompany.indeed-assessments.com/roles/4qaqmgyz6_bxf-cl",
         "assessments": []
       }
     }
@@ -83,20 +83,20 @@ bundle.
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/bundles.json
+  https://api.indeed-assessments.com/v1/roles.json
 ```
 
 
-## Get a bundle
+## Get a role
 
-* `GET /bundles/pgrnovpmee0qkljd.json` will return the bundle with the
+* `GET /roles/pgrnovpmee0qkljd.json` will return the role with the
   given `ID`, granted you have access to it.
 
 ###### Example JSON Response
 
 ```json
 {
-  "bundle": {
+  "role": {
     "id": "pgrnovpmee0qkljd",
     "name": "Frontend Engineer (JS Experience)",
     "description": "Test for assessing JS skills",
@@ -104,7 +104,7 @@ curl -s -H "Authorization: token $API_KEY" \
     "status": "published_and_locked",
     "created_at": "2017-09-29T21:07:36.407Z",
     "updated_at": "2017-09-29T21:07:36.502Z",
-    "url": "https://yourcompany.indeed-assessments.com/bundles/pgrnovpmee0qkljd",
+    "url": "https://yourcompany.indeed-assessments.com/roles/pgrnovpmee0qkljd",
     "assessments": [
       {
         "assessment": {
@@ -130,26 +130,26 @@ curl -s -H "Authorization: token $API_KEY" \
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd.json
+  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd.json
 ```
 
 
-## Create a bundle
+## Create a role
 
-* `POST /bundles.json` creates a bundle for your organization.
+* `POST /roles.json` creates a role for your organization.
 
 **Parameters**:
 
-- `name` _(mandatory)_ - The name of the bundle
-- `description` _(optional)_ - A description of the bundle
+- `name` _(mandatory)_ - The name of the role
+- `description` _(optional)_ - A description of the role
 - `completion_redirect_url` _(optional)_ - Redirect the user to a given URL after
-  the user completes all the assessments in the bundle.
+  the user completes all the assessments in the role.
 - `status` _(optional)_ - Defaults to `unpublished_and_unlocked` so you can add
-  assessments to the bundle. Possible values are `unpublished_and_unlocked`,
+  assessments to the role. Possible values are `unpublished_and_unlocked`,
   `published_and_locked` and `archived_and_locked`.
 
 This endpoint will return `201 Created` with the JSON representation of the
-bundle if the creation was a success. See the [Get a bundle](#get-a-bundle)
+role if the creation was a success. See the [Get a role](#get-a-role)
 endpoint for more info on the payload.
 
 
@@ -157,7 +157,7 @@ endpoint for more info on the payload.
 
 ``` json
 {
-  "name": "My new bundle"
+  "name": "My new role"
 }
 ```
 
@@ -166,25 +166,26 @@ endpoint for more info on the payload.
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"name":"My new bundle"}' \
-  https://api.indeed-assessments.com/v1/bundles.json
+  -d '{"name":"My new role"}' \
+  https://api.indeed-assessments.com/v1/roles.json
 ```
 
 
-## Add an Assessment to a Bundle
+## Add an Assessment to a Role
 
-* `POST /bundles/pgrnovpmee0qkljd/assessments.json` adds one or more assessments to a given bundle in your organization.
+* `POST /roles/pgrnovpmee0qkljd/assessments.json` adds one or more assessments
+  to a given role in your organization.
 
 **Parameters**:
 
 - `assessment_ids` _(mandatory)_ - An array with the ids of the assessments
-  that you want to add to the bundle.
+  that you want to add to the role.
 
 This endpoint will return `201 Created` with the JSON representation of the
-bundle if the creation was a success. See the [Get a bundle](#get-a-bundle)
+role if the creation was a success. See the [Get a role](#get-a-role)
 endpoint for more info on the payload.
 
-**Please note that you can add assessments to a bundle, only if the bundle status
+**Please note that you can add assessments to a role, only if the role status
 is `unpublished_and_unlocked` and the assessment status is
 `published_and_locked`**
 
@@ -203,17 +204,18 @@ is `unpublished_and_unlocked` and the assessment status is
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"assessment_ids": ["are-you-a-human", "do-you-math"]}' \
-  https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd/assessments.json
+  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd/assessments.json
 ```
 
 
-## Remove an Assessment from a Bundle
+## Remove an Assessment from a Role
 
-* `DELETE /bundles/pgrnovpmee0qkljd/assessments/are-you-human.json` removes the `are-you-human` assessment from the `pgrnovpmee0qkljd` bundle.
+* `DELETE /roles/pgrnovpmee0qkljd/assessments/are-you-human.json` removes the
+  `are-you-human` assessment from the `pgrnovpmee0qkljd` role.
 
 This endpoint will return `204 No Content` if successful.
 
-**Please note that you can remove assessments from a bundle, only if the bundle status
+**Please note that you can remove assessments from a role, only if the role status
 is `unpublished_and_unlocked`**
 
 
@@ -223,17 +225,17 @@ is `unpublished_and_unlocked`**
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -X DELETE \
-  https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd/assessments/are-you-human.json
+  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd/assessments/are-you-human.json
 ```
 
 
-## Update a bundle
+## Update a Role
 
-* `PUT /bundles/pgrnovpmee0qkljd.json` allows changing attributes of a bundle
+* `PUT /roles/pgrnovpmee0qkljd.json` allows changing attributes of a role
   and change its publication status.
 
-This endpoint will return `200 OK` with the JSON representation of the bundle
-if the update was a success. See the [Get a bundle](#get-a-bundle)
+This endpoint will return `200 OK` with the JSON representation of the role
+if the update was a success. See the [Get a role](#get-a-role)
 endpoint for more info on the payload.
 
 
@@ -241,7 +243,7 @@ endpoint for more info on the payload.
 
 ``` json
 {
-  "name": "My new name for the bundle"
+  "name": "My new name for the role"
 }
 ```
 
@@ -250,24 +252,24 @@ endpoint for more info on the payload.
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"name":"My new name for the bundle bundle"}' \
+  -d '{"name":"My new name for the role"}' \
   -X PUT \
-  https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd.json
+  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd.json
 ```
 
 
-## Destroy a bundle
+## Destroy a Role
 
-* `DELETE /bundles/pgrnovpmee0qkljd.json` will delete the given bundle if the
-  bundle wasn't previously published.
+* `DELETE /roles/pgrnovpmee0qkljd.json` will delete the given role if the
+  role wasn't previously published.
 
 This endpoint will return `204 No Content` if successful.
 
-You can only delete bundles if they are in the `unpublished_and_unlocked`
+You can only delete roles if they are in the `unpublished_and_unlocked`
 status, otherwise, the deletion is not permitted.
 
-If you want to "unpublish" a bundle, please see the [Update a
-bundle](#update-a-bundle) and pass the new `status` with a value of
+If you want to "unpublish" a role, please see the [Update a
+role](#update-a-role) and pass the new `status` with a value of
 `archived_and_locked`.
 
 ###### Copy as cURL
@@ -276,7 +278,7 @@ bundle](#update-a-bundle) and pass the new `status` with a value of
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -X DELETE \
-  https://api.indeed-assessments.com/v1/bundles/pgrnovpmee0qkljd.json
+  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd.json
 ```
 
 [pagination]: https://github.com/juandazapata/ia-api-docs/blob/master/README.md#pagination

@@ -27,7 +27,7 @@ Endpoints:
     "completed_at": "2017-09-29T21:07:36.407Z",
     "created_at": "2017-09-29T21:07:36.407Z",
     "updated_at": "2017-09-29T21:07:36.502Z",
-    "bundle": {
+    "role": {
       "id": "pgrnovpmee0qkljd",
       "name": "Frontend Engineer (JS Experience)"
     },
