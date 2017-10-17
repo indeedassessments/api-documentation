@@ -178,8 +178,8 @@ curl -s -H "Authorization: token $API_KEY" \
 
 **Parameters**:
 
-- `assessment_ids` _(mandatory)_ - An array with the ids of the assessments
-  that you want to add to the role.
+- `assessment_id` _(mandatory)_ - The ID of the assessments that you want to
+  add to the role.
 
 This endpoint will return `201 Created` with the JSON representation of the
 role if the creation was a success. See the [Get a role](#get-a-role)
@@ -194,7 +194,7 @@ is `unpublished_and_unlocked` and the assessment status is
 
 ``` json
 {
-  "assessment_ids": ["are-you-a-human", "do-you-math"],
+  "assessment_id": "are-you-a-human"
 }
 ```
 
@@ -203,7 +203,7 @@ is `unpublished_and_unlocked` and the assessment status is
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"assessment_ids": ["are-you-a-human", "do-you-math"]}' \
+  -d '{assessment_id: "are-you-a-human"}' \
   https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd/assessments.json
 ```
 
