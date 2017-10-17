@@ -35,7 +35,7 @@ are displayed first).
         "progress": "complete",
         "created_at": "2017-09-29T21:07:36.407Z",
         "updated_at": "2017-09-29T21:07:36.502Z",
-        "url": "https://yourcompany.indeed-assessments.com/assignments/832uwyzirea9ftehxuwya38",
+        "url": "https://yourcompany.indeedassessments.com/assignments/832uwyzirea9ftehxuwya38",
         "role": {
           "id": "pgrnovpmee0qkljd",
           "name": "Frontend Engineer (JS Experience)",
@@ -56,7 +56,7 @@ are displayed first).
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/assignments.json
+  https://api.indeedassessments.com/v1/assignments.json
 ```
 
 
@@ -80,7 +80,7 @@ curl -s -H "Authorization: token $API_KEY" \
     "progress": "complete",
     "created_at": "2017-09-29T21:07:36.407Z",
     "updated_at": "2017-09-29T21:07:36.502Z",
-    "url": "https://yourcompany.indeed-assessments.com/assignments/832uwyzirea9ftehxuwya38",
+    "url": "https://yourcompany.indeedassessments.com/assignments/832uwyzirea9ftehxuwya38",
     "role": {
       "id": "pgrnovpmee0qkljd",
       "name": "Frontend Engineer (JS Experience)",
@@ -98,7 +98,7 @@ curl -s -H "Authorization: token $API_KEY" \
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/assignments/832uwyzirea9ftehxuwya38.json
+  https://api.indeedassessments.com/v1/assignments/832uwyzirea9ftehxuwya38.json
 ```
 
 
@@ -142,7 +142,7 @@ user, with an invitation to take the assessments.
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"role_id":"pgrnovpmee0qkljd", "email":"john.doe@example.com"}' \
-  https://api.indeed-assessments.com/v1/assignments.json
+  https://api.indeedassessments.com/v1/assignments.json
 ```
 
 [pagination]: https://github.com/juandazapata/ia-api-docs/blob/master/README.md#pagination

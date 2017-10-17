@@ -40,7 +40,7 @@ role.
         "status": "published_and_locked",
         "created_at": "2017-09-29T21:07:36.407Z",
         "updated_at": "2017-09-29T21:07:36.502Z",
-        "url": "https://yourcompany.indeed-assessments.com/roles/pgrnovpmee0qkljd",
+        "url": "https://yourcompany.indeedassessments.com/roles/pgrnovpmee0qkljd",
         "assessments": [
           {
             "assessment": {
@@ -70,7 +70,7 @@ role.
         "status": "published_and_locked",
         "created_at": "2017-10-02T14:09:01.401Z",
         "updated_at": "2017-10-02T14:09:01.401Z",
-        "url": "https://yourcompany.indeed-assessments.com/roles/4qaqmgyz6_bxf-cl",
+        "url": "https://yourcompany.indeedassessments.com/roles/4qaqmgyz6_bxf-cl",
         "assessments": []
       }
     }
@@ -83,7 +83,7 @@ role.
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/roles.json
+  https://api.indeedassessments.com/v1/roles.json
 ```
 
 
@@ -104,7 +104,7 @@ curl -s -H "Authorization: token $API_KEY" \
     "status": "published_and_locked",
     "created_at": "2017-09-29T21:07:36.407Z",
     "updated_at": "2017-09-29T21:07:36.502Z",
-    "url": "https://yourcompany.indeed-assessments.com/roles/pgrnovpmee0qkljd",
+    "url": "https://yourcompany.indeedassessments.com/roles/pgrnovpmee0qkljd",
     "assessments": [
       {
         "assessment": {
@@ -130,7 +130,7 @@ curl -s -H "Authorization: token $API_KEY" \
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd.json
+  https://api.indeedassessments.com/v1/roles/pgrnovpmee0qkljd.json
 ```
 
 
@@ -167,7 +167,7 @@ endpoint for more info on the payload.
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name":"My new role"}' \
-  https://api.indeed-assessments.com/v1/roles.json
+  https://api.indeedassessments.com/v1/roles.json
 ```
 
 
@@ -204,7 +204,7 @@ is `unpublished_and_unlocked` and the assessment status is
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{assessment_id: "are-you-a-human"}' \
-  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd/assessments.json
+  https://api.indeedassessments.com/v1/roles/pgrnovpmee0qkljd/assessments.json
 ```
 
 
@@ -225,7 +225,7 @@ is `unpublished_and_unlocked`**
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -X DELETE \
-  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd/assessments/are-you-human.json
+  https://api.indeedassessments.com/v1/roles/pgrnovpmee0qkljd/assessments/are-you-human.json
 ```
 
 
@@ -254,7 +254,7 @@ curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"name":"My new name for the role"}' \
   -X PUT \
-  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd.json
+  https://api.indeedassessments.com/v1/roles/pgrnovpmee0qkljd.json
 ```
 
 
@@ -278,7 +278,7 @@ role](#update-a-role) and pass the new `status` with a value of
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -X DELETE \
-  https://api.indeed-assessments.com/v1/roles/pgrnovpmee0qkljd.json
+  https://api.indeedassessments.com/v1/roles/pgrnovpmee0qkljd.json
 ```
 
 [pagination]: https://github.com/juandazapata/ia-api-docs/blob/master/README.md#pagination

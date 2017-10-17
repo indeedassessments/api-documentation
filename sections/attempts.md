@@ -48,7 +48,7 @@ Endpoints:
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/attempts/123.json
+  https://api.indeedassessments.com/v1/attempts/123.json
 ```
 
 [pagination]: https://github.com/juandazapata/ia-api-docs/blob/master/README.md#pagination

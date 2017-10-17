@@ -19,17 +19,17 @@ Assessments is a REST-style API that uses JSON for serialization.
 
 ## Making a request
 
-All URLs start with **`https://api.indeed-assessments.com/v1/`**. URLs are
+All URLs start with **`https://api.indeedassessments.com/v1/`**. URLs are
 HTTPS only. The latest version of the API is `v1`.
 
 To make a request for all the roles in your account, append the `roles`
 index path to the base URL to form something like
-`https://api.indeed-assessments.com/v1/roles.json`. In cURL, it looks like
+`https://api.indeedassessments.com/v1/roles.json`. In cURL, it looks like
 this:
 
 ```bash
 curl -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/roles.json
+  https://api.indeedassessments.com/v1/roles.json
 ```
 
 To create something, you also have to include the `Content-Type` header and the
@@ -39,7 +39,7 @@ JSON data:
 curl -H "Authorization: token $API_KEY" \
   -H 'Content-Type: application/json' \
   -d '{ "name": "My new role!" }' \
-  https://api.indeed-assessments.com/v1/roles.json
+  https://api.indeedassessments.com/v1/roles.json
 ```
 
 Throughout the Indeed Assessments API docs, we include "Copy as cURL" examples.
@@ -56,7 +56,7 @@ readable. Try [jsonpp](https://jmhodges.github.io/jsonpp/) or `json_pp` on OSX:
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/roles.json | json_pp
+  https://api.indeedassessments.com/v1/roles.json | json_pp
 ```
 
 
@@ -90,7 +90,7 @@ you'd do:
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/roles.json?page=1&per=1 | json_pp
+  https://api.indeedassessments.com/v1/roles.json?page=1&per=1 | json_pp
 ```
 
 And you would get:
@@ -112,7 +112,7 @@ And you would get:
         "status": "published_and_locked",
         "created_at": "2017-09-29T21:07:36.407Z",
         "updated_at": "2017-09-29T21:07:36.502Z",
-        "url": "https://my-account.indeed-assessments.com/roles/pgrnovpmee0qkljd",
+        "url": "https://my-account.indeedassessments.com/roles/pgrnovpmee0qkljd",
         "assessments": [
           {
             "assessment": {
@@ -204,5 +204,5 @@ with improvements.
 
 To talk with us and other developers about the API, [post a question on
 StackOverflow](http://stackoverflow.com/questions/ask) tagged
-`indeed-assessments`. If you need help from us directly, please [open a support
-ticket](https://indeed-assessments.com/support).
+`indeedassessments`. If you need help from us directly, please [open a support
+ticket](https://indeedassessments.com/support).

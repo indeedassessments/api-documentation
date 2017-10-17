@@ -63,7 +63,7 @@ part of the public library (assessments created by our team).
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/assessments.json
+  https://api.indeedassessments.com/v1/assessments.json
 ```
 
 
@@ -95,7 +95,7 @@ curl -s -H "Authorization: token $API_KEY" \
 
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
-  https://api.indeed-assessments.com/v1/assessments/are-you-a-human.json
+  https://api.indeedassessments.com/v1/assessments/are-you-a-human.json
 ```
 
 
