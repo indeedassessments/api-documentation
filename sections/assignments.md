@@ -25,26 +25,228 @@ are displayed first).
   "results": [
     {
       "assignment": {
-        "id": "832uwyzirea9ftehxuwya38",
-        "remaining_asssessment_count": 0,
-        "score": 100,
-        "possible_score": 100,
-        "weighted_percentage_score": 100,
-        "pending_review_count": 1,
+        "id": "yw4gmpjjtkgkdxjkuoghsa",
+        "remaining_assessment_count": 0,
         "completion_redirect_url": null,
-        "progress": "complete",
-        "created_at": "2017-09-29T21:07:36.407Z",
-        "updated_at": "2017-09-29T21:07:36.502Z",
-        "url": "https://yourcompany.indeedassessments.com/assignments/832uwyzirea9ftehxuwya38",
+        "external_job_id": null,
+        "external_candidacy_id": null,
+        "external_person_id": null,
+        "created_at": "2017-12-08T13:38:16.556Z",
+        "updated_at": "2017-12-08T13:38:17.560Z",
+        "score": 2.0,
+        "possible_score": 2.0,
+        "weighted_percentage_score": 1.0,
+        "invitation_url": "http://lang-group-33uekq.i9d.me:9887/c/start_next/xkxtl4xt_ft2cyfckui2yg/bzXUhnAktXE9pD_iQy7y",
+        "public_results_url": "http://lang-group-33uekq.i9d.me:9887/share_assignment/yw4gmpjjtkgkdxjkuoghsa",
         "role": {
-          "id": "pgrnovpmee0qkljd",
-          "name": "Frontend Engineer (JS Experience)",
-          "attempt_ids": [133, 182, 293]
+          "id": "gih3cv7f6a9ixgjt",
+          "name": "Milky Way 1"
         },
         "user": {
-          "email": "john.doe@example.com",
-          "full_name": "John Doe"
-        }
+          "id": "anonymous-candidate",
+          "name": "Anonymous Candidate 514",
+          "email": "some-user0@example.com"
+        },
+        "attempts": [
+          {
+            "id": "khbgltqixvvyoxeb",
+            "completion_time_in_seconds": 1512740297,
+            "scoring_completed": true,
+            "pending_review_count": 0,
+            "started_at": "2017-12-08T13:38:17.434Z",
+            "completed_at": "2017-12-08T13:38:17.434Z",
+            "created_at": "2017-12-08T13:38:16.627Z",
+            "updated_at": "2017-12-08T13:38:17.550Z",
+            "score": 2.0,
+            "possible_score": 2.0,
+            "percentage_score": 1.0,
+            "assessment": {
+              "id": "pjpmahbioyqufxos",
+              "name": "Philosopher Assessment 1"
+            },
+            "step_progressions": [
+              {
+                "answers": [
+                  {
+                    "value": null,
+                    "question": {
+                      "id": "zhw2jhjqydhdrzlz",
+                      "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                      "instructions": "Help instructions for a question type of type Single line text with a question scoring rule",
+                      "choices": [
+
+                      ]
+                    },
+                    "select_choices": [
+
+                    ],
+                    "scores": [
+
+                    ]
+                  },
+                  {
+                    "value": "This Lime Tree Bower",
+                    "question": {
+                      "id": "zhw2jhjqydhdrzlz",
+                      "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                      "instructions": "Help instructions for a question type of type Single line text with a question scoring rule",
+                      "choices": [
+
+                      ]
+                    },
+                    "select_choices": [
+
+                    ],
+                    "scores": [
+                      {
+                        "score": 1.0,
+                        "possible_score": 1.0,
+                        "scoring_dimension_name": "Sales > Math"
+                      }
+                    ]
+                  },
+                  {
+                    "value": null,
+                    "question": {
+                      "id": "u8ufjuh5dh5qdri",
+                      "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                      "instructions": "Help instructions for a question type of type Paragraph text with a question scoring rule",
+                      "choices": [
+
+                      ]
+                    },
+                    "select_choices": [
+
+                    ],
+                    "scores": [
+
+                    ]
+                  },
+                  {
+                    "value": "A Passage to India",
+                    "question": {
+                      "id": "u8ufjuh5dh5qdri",
+                      "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                      "instructions": "Help instructions for a question type of type Paragraph text with a question scoring rule",
+                      "choices": [
+
+                      ]
+                    },
+                    "select_choices": [
+
+                    ],
+                    "scores": [
+                      {
+                        "score": 1.0,
+                        "possible_score": 1.0,
+                        "scoring_dimension_name": "Friendliness"
+                      }
+                    ]
+                  },
+                  {
+                    "value": null,
+                    "question": {
+                      "id": "zhjhofglmrzw4o40",
+                      "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                      "instructions": "Help instructions for a question type of type Static text",
+                      "choices": [
+                        {
+                          "id": "gc5ixhi9ci9d-miw",
+                          "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "fctk69mxdnv_pw8d",
+                          "value": "To the well-organized mind, death is but the next great adventure. (2)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "aesr6xnq_3_he2_g",
+                          "value": "Never trust anything that can think for itself if you cant see where it keeps its brain. (3)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "fdj_3tzvpp8cwsaz",
+                          "value": "Things we lose have a way of coming back to us in the end, if not always in the way we expect. (4)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "jzmmr4qf85el_zrs",
+                          "value": "It is our choices, Harry, that show what we truly are, far more than our abilities. (5)",
+                          "correct_answer": false
+                        }
+                      ]
+                    },
+                    "select_choices": [
+
+                    ],
+                    "scores": [
+
+                    ]
+                  },
+                  {
+                    "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1), To the well-organized mind, death is but the next great adventure. (2)",
+                    "question": {
+                      "id": "zhjhofglmrzw4o40",
+                      "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                      "instructions": "Help instructions for a question type of type Static text",
+                      "choices": [
+                        {
+                          "id": "gc5ixhi9ci9d-miw",
+                          "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "fctk69mxdnv_pw8d",
+                          "value": "To the well-organized mind, death is but the next great adventure. (2)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "aesr6xnq_3_he2_g",
+                          "value": "Never trust anything that can think for itself if you cant see where it keeps its brain. (3)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "fdj_3tzvpp8cwsaz",
+                          "value": "Things we lose have a way of coming back to us in the end, if not always in the way we expect. (4)",
+                          "correct_answer": false
+                        },
+                        {
+                          "id": "jzmmr4qf85el_zrs",
+                          "value": "It is our choices, Harry, that show what we truly are, far more than our abilities. (5)",
+                          "correct_answer": false
+                        }
+                      ]
+                    },
+                    "select_choices": [
+                      {
+                        "id": "gc5ixhi9ci9d-miw",
+                        "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1)",
+                        "correct_answer": false
+                      },
+                      {
+                        "id": "fctk69mxdnv_pw8d",
+                        "value": "To the well-organized mind, death is but the next great adventure. (2)",
+                        "correct_answer": false
+                      }
+                    ],
+                    "scores": [
+
+                    ]
+                  }
+                ],
+                "step": {
+                  "name": "A demo step",
+                  "sequence": 1
+                },
+                "started_at": "2017-12-08T13:38:17.357Z",
+                "completed_at": "2017-12-08T13:38:17.412Z",
+                "timed_out": false,
+                "completion_time_in_seconds": 0
+              }
+            ]
+          }
+        ]
       }
     }
   ]
@@ -70,26 +272,228 @@ curl -s -H "Authorization: token $API_KEY" \
 ```json
 {
   "assignment": {
-    "id": "832uwyzirea9ftehxuwya38",
-    "remaining_asssessment_count": 0,
-    "score": 100,
-    "possible_score": 100,
-    "weighted_percentage_score": 100,
-    "pending_review_count": 1,
+    "id": "yw4gmpjjtkgkdxjkuoghsa",
+    "remaining_assessment_count": 0,
     "completion_redirect_url": null,
-    "progress": "complete",
-    "created_at": "2017-09-29T21:07:36.407Z",
-    "updated_at": "2017-09-29T21:07:36.502Z",
-    "url": "https://yourcompany.indeedassessments.com/assignments/832uwyzirea9ftehxuwya38",
+    "external_job_id": null,
+    "external_candidacy_id": null,
+    "external_person_id": null,
+    "created_at": "2017-12-08T13:38:16.556Z",
+    "updated_at": "2017-12-08T13:38:17.560Z",
+    "score": 2.0,
+    "possible_score": 2.0,
+    "weighted_percentage_score": 1.0,
+    "invitation_url": "http://lang-group-33uekq.i9d.me:9887/c/start_next/xkxtl4xt_ft2cyfckui2yg/bzXUhnAktXE9pD_iQy7y",
+    "public_results_url": "http://lang-group-33uekq.i9d.me:9887/share_assignment/yw4gmpjjtkgkdxjkuoghsa",
     "role": {
-      "id": "pgrnovpmee0qkljd",
-      "name": "Frontend Engineer (JS Experience)",
-      "attempt_ids": [133, 182, 293]
+      "id": "gih3cv7f6a9ixgjt",
+      "name": "Milky Way 1"
     },
     "user": {
-      "email": "john.doe@example.com",
-      "full_name": "John Doe"
-    }
+      "id": "anonymous-candidate",
+      "name": "Anonymous Candidate 514",
+      "email": "some-user0@example.com"
+    },
+    "attempts": [
+      {
+        "id": "khbgltqixvvyoxeb",
+        "completion_time_in_seconds": 1512740297,
+        "scoring_completed": true,
+        "pending_review_count": 0,
+        "started_at": "2017-12-08T13:38:17.434Z",
+        "completed_at": "2017-12-08T13:38:17.434Z",
+        "created_at": "2017-12-08T13:38:16.627Z",
+        "updated_at": "2017-12-08T13:38:17.550Z",
+        "score": 2.0,
+        "possible_score": 2.0,
+        "percentage_score": 1.0,
+        "assessment": {
+          "id": "pjpmahbioyqufxos",
+          "name": "Philosopher Assessment 1"
+        },
+        "step_progressions": [
+          {
+            "answers": [
+              {
+                "value": null,
+                "question": {
+                  "id": "zhw2jhjqydhdrzlz",
+                  "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                  "instructions": "Help instructions for a question type of type Single line text with a question scoring rule",
+                  "choices": [
+
+                  ]
+                },
+                "select_choices": [
+
+                ],
+                "scores": [
+
+                ]
+              },
+              {
+                "value": "This Lime Tree Bower",
+                "question": {
+                  "id": "zhw2jhjqydhdrzlz",
+                  "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                  "instructions": "Help instructions for a question type of type Single line text with a question scoring rule",
+                  "choices": [
+
+                  ]
+                },
+                "select_choices": [
+
+                ],
+                "scores": [
+                  {
+                    "score": 1.0,
+                    "possible_score": 1.0,
+                    "scoring_dimension_name": "Sales > Math"
+                  }
+                ]
+              },
+              {
+                "value": null,
+                "question": {
+                  "id": "u8ufjuh5dh5qdri",
+                  "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                  "instructions": "Help instructions for a question type of type Paragraph text with a question scoring rule",
+                  "choices": [
+
+                  ]
+                },
+                "select_choices": [
+
+                ],
+                "scores": [
+
+                ]
+              },
+              {
+                "value": "A Passage to India",
+                "question": {
+                  "id": "u8ufjuh5dh5qdri",
+                  "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                  "instructions": "Help instructions for a question type of type Paragraph text with a question scoring rule",
+                  "choices": [
+
+                  ]
+                },
+                "select_choices": [
+
+                ],
+                "scores": [
+                  {
+                    "score": 1.0,
+                    "possible_score": 1.0,
+                    "scoring_dimension_name": "Friendliness"
+                  }
+                ]
+              },
+              {
+                "value": null,
+                "question": {
+                  "id": "zhjhofglmrzw4o40",
+                  "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                  "instructions": "Help instructions for a question type of type Static text",
+                  "choices": [
+                    {
+                      "id": "gc5ixhi9ci9d-miw",
+                      "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "fctk69mxdnv_pw8d",
+                      "value": "To the well-organized mind, death is but the next great adventure. (2)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "aesr6xnq_3_he2_g",
+                      "value": "Never trust anything that can think for itself if you cant see where it keeps its brain. (3)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "fdj_3tzvpp8cwsaz",
+                      "value": "Things we lose have a way of coming back to us in the end, if not always in the way we expect. (4)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "jzmmr4qf85el_zrs",
+                      "value": "It is our choices, Harry, that show what we truly are, far more than our abilities. (5)",
+                      "correct_answer": false
+                    }
+                  ]
+                },
+                "select_choices": [
+
+                ],
+                "scores": [
+
+                ]
+              },
+              {
+                "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1), To the well-organized mind, death is but the next great adventure. (2)",
+                "question": {
+                  "id": "zhjhofglmrzw4o40",
+                  "label": "If they follow standard Imperial procedure, theyll dump their garbage before they go to light-speed.",
+                  "instructions": "Help instructions for a question type of type Static text",
+                  "choices": [
+                    {
+                      "id": "gc5ixhi9ci9d-miw",
+                      "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "fctk69mxdnv_pw8d",
+                      "value": "To the well-organized mind, death is but the next great adventure. (2)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "aesr6xnq_3_he2_g",
+                      "value": "Never trust anything that can think for itself if you cant see where it keeps its brain. (3)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "fdj_3tzvpp8cwsaz",
+                      "value": "Things we lose have a way of coming back to us in the end, if not always in the way we expect. (4)",
+                      "correct_answer": false
+                    },
+                    {
+                      "id": "jzmmr4qf85el_zrs",
+                      "value": "It is our choices, Harry, that show what we truly are, far more than our abilities. (5)",
+                      "correct_answer": false
+                    }
+                  ]
+                },
+                "select_choices": [
+                  {
+                    "id": "gc5ixhi9ci9d-miw",
+                    "value": "If you want to know what a mans like, take a good look at how he treats his inferiors, not his equals. (1)",
+                    "correct_answer": false
+                  },
+                  {
+                    "id": "fctk69mxdnv_pw8d",
+                    "value": "To the well-organized mind, death is but the next great adventure. (2)",
+                    "correct_answer": false
+                  }
+                ],
+                "scores": [
+
+                ]
+              }
+            ],
+            "step": {
+              "name": "A demo step",
+              "sequence": 1
+            },
+            "started_at": "2017-12-08T13:38:17.357Z",
+            "completed_at": "2017-12-08T13:38:17.412Z",
+            "timed_out": false,
+            "completion_time_in_seconds": 0
+          }
+        ]
+      }
+    ]
   }
 }
 ```
