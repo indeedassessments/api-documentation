@@ -514,13 +514,8 @@ curl -s -H "Authorization: token $API_KEY" \
 
 - `email` _(mandatory)_ - The email of the user that you want to take the
   assessments in the role.
-- `role_id` _(mandatory if `assessment_ids` is not present)_ - The role
+- `role_id` _(mandatory)_ - The role
   that you want the user to take
-- `assessments_id` _(mandatory if `role_id` is not present)_ - An array of
-  assessment ids that you want the user to take additionally to the assessments
-  that are in the role.
-
-You must provide either `role_id` or `assessments_id` in your request.
 
 This endpoint will return `201 Created` with the JSON representation of the
 assignment if the creation was a success. See the [Get an
