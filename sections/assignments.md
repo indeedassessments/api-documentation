@@ -490,6 +490,76 @@ curl -s -H "Authorization: token $API_KEY" \
             "completed_at": "2017-12-08T13:38:17.412Z",
             "timed_out": false,
             "completion_time_in_seconds": 0
+          },
+          {
+            "audio_recordings": [
+              {
+                "url": "http: //stromansatterfield.name/cayla",
+                "size": 107,
+                "duration": 69,
+                "created_at": "2018-01-23T13: 50: 17.192Z",
+                "updated_at": "2018-01-23T13: 50: 17.192Z",
+                "transcription_1": "You're gonna over-dry your laundry?",
+                "transcription_1_status": "The sea was angry that day my friends.",
+                "transcription_1_confidence": "0.0",
+                "transcription_2": "But I don't want to be a pirate!",
+                "transcription_2_status": "It's Fusilli Jerry!",
+                "transcription_2_confidence": "3.0",
+                "transcription_3": "This isn't a good time",
+                "transcription_3_status": "Hello, Newman.",
+                "transcription_3_confidence": "2.0",
+                "audio_prompt": {
+                  "name": "This woman hates me so much, I'm starting to like her",
+                  "url": "http: //nikolaus.biz/jasen",
+                  "sequence": "1.0",
+                  "record_after_prompt": true,
+                  "text_to_speech": "Cartwright! Cartwright!",
+                  "text_to_speech_url": "http: //skiles.biz/naomie_cartwright",
+                  "text_to_speech_voice": "English - Julie (US Female)"
+                }
+              }
+            ],
+            "answers": [
+
+            ],
+            "step": {
+              "name": "A audio interview step",
+              "sequence": 1
+            },
+            "started_at": "2018-01-23T13: 50: 17.149Z",
+            "completed_at": "2018-01-23T13: 50: 17.202Z",
+            "timed_out": false,
+            "completion_time_in_seconds": 0
+          },
+          {
+            "video_recordings": [
+              {
+                "url": "http: //yundt.com/cory",
+                "file_size": 249,
+                "duration": 79,
+                "created_at": "2018-01-23T16: 17: 27.999Z",
+                "updated_at": "2018-01-23T16: 17: 27.999Z",
+                "practice": false,
+                "video_prompt": {
+                  "name": "This woman hates me so much, I'm starting to like her",
+                  "sequence": "1.0",
+                  "text_prompt": "You're gonna over-dry your laundry?",
+                  "retakes": 0,
+                  "time_limit_in_seconds": 60
+                }
+              }
+            ],
+            "answers": [
+
+            ],
+            "step": {
+              "name": "A video interview step",
+              "sequence": 1
+            },
+            "started_at": "2018-01-23T16: 17: 27.964Z",
+            "completed_at": "2018-01-23T16: 17: 28.008Z",
+            "timed_out": false,
+            "completion_time_in_seconds": 0
           }
         ]
       }
