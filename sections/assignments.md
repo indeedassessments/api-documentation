@@ -553,8 +553,8 @@ curl -s -H "Authorization: token $API_KEY" \
 
             ],
             "step": {
-            "name": "A video interview step",
-            "sequence": 1
+              "name": "A video interview step",
+              "sequence": 1
             },
             "started_at": "2018-01-23T16: 17: 27.964Z",
             "completed_at": "2018-01-23T16: 17: 28.008Z",
