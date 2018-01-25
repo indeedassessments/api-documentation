@@ -258,15 +258,15 @@ curl -s -H "Authorization: token $API_KEY" \
 ```
 
 
-## Destroy a Role
+## Archive a Role
 
-* `DELETE /roles/pgrnovpmee0qkljd.json` will delete the given role if the
+* `DELETE /roles/pgrnovpmee0qkljd.json` will archive the given role if the
   role wasn't previously published.
 
 This endpoint will return `204 No Content` if successful.
 
-You can only delete roles if they are in the `unpublished_and_unlocked`
-status, otherwise, the deletion is not permitted.
+You can only archive roles if they are in the `unpublished_and_unlocked`
+status, otherwise, the archive request is not permitted.
 
 If you want to "unpublish" a role, please see the [Update a
 role](#update-a-role) and pass the new `status` with a value of
