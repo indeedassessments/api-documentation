@@ -13,6 +13,9 @@ Endpoints:
 assignments, sorted by creation date in descending order (newest assignments
 are displayed first).
 
+_Note:_ Questions and their details, including candidate answers, will **not** appear in the response for assignment attempts of public assessments.
+
+
 ###### Example JSON Response
 
 ```json
@@ -266,6 +269,8 @@ curl -s -H "Authorization: token $API_KEY" \
 
 * `GET /assignments/832uwyzirea9ftehxuwya38.json` will return the assignment
   with the given `ID`, granted you have access to it.
+
+_Note:_ Questions and their details, including candidate answers, will **not** appear in the response for assignment attempts of public assessments.
 
 ###### Example JSON Response
 

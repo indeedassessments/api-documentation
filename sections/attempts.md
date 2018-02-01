@@ -9,6 +9,9 @@ Endpoints:
 
 * `GET /attempts/123.json` will return the attempt with the given `ID`, granted
   you have access to it.
+  
+_Note:_ Questions and their details, including candidate answers, will **not** appear in the response for attempts of public assessments.
+
 
 ###### Example JSON Response
 
