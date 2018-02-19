@@ -64,7 +64,7 @@ role.
     {
       "role": {
         "id": "4qaqmgyz6_bxf-cl",
-        "name": "Poop role",
+        "name": "Backend Engineer (Ruby on Rails)",
         "description": null,
         "completion_redirect_url": null,
         "status": "published_and_locked",
