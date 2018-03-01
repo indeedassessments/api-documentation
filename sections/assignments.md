@@ -514,6 +514,7 @@ _Note:_ Questions and their details, including candidate answers, will **not** a
                 "transcription_3_status": "Hello, Newman.",
                 "transcription_3_confidence": "2.0",
                 "audio_prompt": {
+                  "id": "rhfydjeihete_yhg",
                   "name": "This woman hates me so much, I'm starting to like her",
                   "url": "http: //nikolaus.biz/jasen",
                   "sequence": "1.0",
