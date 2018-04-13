@@ -29,6 +29,7 @@ _Note:_ Questions and their details, including candidate answers, will **not** a
     "score": 2.0,
     "possible_score": 2.0,
     "percentage_score": 1.0,
+    "level": "Proficient",
     "assessment": {
       "id": "pjpmahbioyqufxos",
       "name": "Philosopher Assessment 1"
