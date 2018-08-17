@@ -594,8 +594,8 @@ curl -s -H "Authorization: token $API_KEY" \
 - `role_id` _(mandatory)_ - The role
   that you want the user to take
 - `completion_webhook_url` _(optional)_ - Creates a webhook in Indeed Assessments.
-  The url will be called upon the completion of an assignment. If used, the value 
-  must not be blank
+  The url will be called, as a POST request, upon the completion of an assignment.
+  If this parameter is used, the value must not be blank.
 - `completion_webhook_name` _(optional)_ - Defines the name of the webhook defined 
   by `completion_webhook_url`. It is not required if `completion_webhook_url` is
   used, but it is helpful to the admin to know what the webhook is for.
