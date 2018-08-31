@@ -593,6 +593,12 @@ curl -s -H "Authorization: token $API_KEY" \
   assessments in the role.
 - `role_id` _(mandatory)_ - The role
   that you want the user to take
+- `completion_webhook_url` _(optional)_ - Creates a webhook in Indeed Assessments.
+  The url will be called, as a POST request, upon the completion of an assignment.
+  If this parameter is used, the value must not be blank.
+- `completion_webhook_name` _(optional)_ - Defines the name of the webhook defined 
+  by `completion_webhook_url`. It is not required if `completion_webhook_url` is
+  used, but it is helpful to the admin to know what the webhook is for.
 
 This endpoint will return `201 Created` with the JSON representation of the
 assignment if the creation was a success. See the [Get an
@@ -619,6 +625,17 @@ curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"role_id":"pgrnovpmee0qkljd", "email":"john.doe@example.com"}' \
   https://api.indeedassessments.com/v1/assignments.json
+```
+
+###### Example JSON Request with completion_webhook_url
+
+``` json
+{
+  "role_id": "pgrnovpmee0qkljd",
+  "email": "john.doe@example.com",
+  "completion_webhook_url": "http://some.url.net/things?and=stuff&more_things=more_stuff",
+  "completion_webhook_name": "webhooks!"
+}
 ```
 
 [pagination]: https://github.com/juandazapata/ia-api-docs/blob/master/README.md#pagination
