@@ -13,6 +13,9 @@ assessments, sorted by assessment name in alphabetical order. The results
 include assessments that were created by your organization and those that are
 part of the public library (assessments created by our team).
 
+Custom assessments include information about the steps and questions that you
+define in builder (only form questions are supported).
+
 ###### Example JSON Response
 
 ```json
@@ -52,7 +55,22 @@ part of the public library (assessments created by our team).
         "public_library": false,
         "status": "published_and_locked",
         "created_at": "2017-09-29T21:07:36.001Z",
-        "updated_at": "2017-09-29T21:07:36.125Z"
+        "updated_at": "2017-09-29T21:07:36.125Z",
+        "steps": {
+          "step": {
+            "type": "reform",
+            "name": "A demo step",
+            "time_limit_in_seconds": null,
+            "instructions": "Answer the following correctly",
+            "instructions_type": null,
+            "questions": [
+              {
+                "type": "single_line_text",
+                "label": "How would you use an abacus?"
+              }
+            ]
+          }
+        }
       }
     }
   ]
