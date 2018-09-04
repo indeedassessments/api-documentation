@@ -599,6 +599,8 @@ curl -s -H "Authorization: token $API_KEY" \
 - `completion_webhook_name` _(optional)_ - Defines the name of the webhook defined 
   by `completion_webhook_url`. It is not required if `completion_webhook_url` is
   used, but it is helpful to the admin to know what the webhook is for.
+- `skip_email` _(optional)_ - Skips the invitation email to the candidate when you
+  pass `true`. Useful if you want to send a custom invitation email.
 
 This endpoint will return `201 Created` with the JSON representation of the
 assignment if the creation was a success. See the [Get an
