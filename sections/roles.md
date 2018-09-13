@@ -141,12 +141,13 @@ curl -s -H "Authorization: token $API_KEY" \
 **Parameters**:
 
 - `name` _(mandatory)_ - The name of the role
+- `status` _(mandatory)_ - Possible values are `unpublished_and_unlocked`,
+  `published_and_locked` and `archived_and_locked`. When creating a new role,
+  you must pass `unpublished_and_unlocked` so you can add assessments to the
+  role.
 - `description` _(optional)_ - A description of the role
 - `completion_redirect_url` _(optional)_ - Redirect the user to a given URL after
   the user completes all the assessments in the role.
-- `status` _(optional)_ - Defaults to `unpublished_and_unlocked` so you can add
-  assessments to the role. Possible values are `unpublished_and_unlocked`,
-  `published_and_locked` and `archived_and_locked`.
 
 This endpoint will return `201 Created` with the JSON representation of the
 role if the creation was a success. See the [Get a role](#get-a-role)
@@ -157,7 +158,8 @@ endpoint for more info on the payload.
 
 ``` json
 {
-  "name": "My new role"
+  "name": "My new role",
+  "status": "unpublished_and_unlocked"
 }
 ```
 
@@ -166,7 +168,7 @@ endpoint for more info on the payload.
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"name":"My new role"}' \
+  -d '{"name":"My new role", "status":"unpublished_and_unlocked"}' \
   https://api.indeedassessments.com/v1/roles.json
 ```
 
