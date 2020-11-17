@@ -262,17 +262,10 @@ curl -s -H "Authorization: token $API_KEY" \
 
 ## Archive a Role
 
-* `DELETE /roles/pgrnovpmee0qkljd.json` will archive the given role if the
+* `DELETE /roles/pgrnovpmee0qkljd.json` will archive the given role even if the
   role wasn't previously published.
 
 This endpoint will return `204 No Content` if successful.
-
-You can only archive roles if they are in the `unpublished_and_unlocked`
-status, otherwise, the archive request is not permitted.
-
-If you want to "unpublish" a role, please see the [Update a
-role](#update-a-role) and pass the new `status` with a value of
-`archived_and_locked`.
 
 ###### Copy as cURL
 
