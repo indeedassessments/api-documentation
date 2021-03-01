@@ -205,7 +205,7 @@ is `unpublished_and_unlocked` and the assessment status is
 ```bash
 curl -s -H "Authorization: token $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{assessment_id: "are-you-a-human"}' \
+  -d '{"id": "are-you-a-human"}' \
   https://api.indeedassessments.com/v1/roles/pgrnovpmee0qkljd/assessments.json
 ```
 
